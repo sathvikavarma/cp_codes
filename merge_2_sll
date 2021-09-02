@@ -100,9 +100,9 @@ class LinkedList:
 def mergeTwoSorted(head1,head2):
     mergelist=None
     if head1==None:
-        return head1
-    if head2==None:
         return head2
+    if head2==None:
+        return head1
     
     if head1.info<=head2.info:
         mergelist=head1
@@ -143,3 +143,4 @@ if __name__=='__main__':
     llist3.head=mergeTwoSorted(llist1.head,llist2.head)
     llist3.display()
     
+
