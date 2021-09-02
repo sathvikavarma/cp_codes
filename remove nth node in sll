@@ -1,0 +1,74 @@
+'''
+
+                            Online Python Compiler.
+                Code, Compile, Run and Debug python program online.
+Write your code in this editor and press "Run" button to execute it.
+
+'''
+
+class Node:
+    def __init__(self,value):
+        self.key=value
+        self.next=None
+class Link_list:
+    def __init__(self):
+        self.head=None
+    def Add_Node(self,value):
+        newnode=Node(value)
+        if self.head==None:
+            self.head=newnode
+        else:
+            p=self.head
+            while p.next!=None:
+                p=p.next
+            p.next=newnode
+    def display(self):
+        if self.head:
+            t=self.head
+            while t:
+                print(t.key)
+                t=t.next
+    def Remove_nth_Node(self,n):
+        if self.head and self.head.next==None:
+            if n==1:
+                print("None")
+                self.head=None
+            else:
+                print("invalid Input")
+        elif self.head and self.head.next and self.head.next.next==None: 
+            if n==1:
+                print("self.head")
+                self.head.next=None
+            elif n==2:
+                print("self.head.next")
+                self.head=self.head.next
+            else:
+                print("Invalid Input")
+        else:
+            count=n
+            p=self.head
+            q=self.head
+            while q.next:
+                if count:
+                    q=q.next
+                    count-=1
+                else:
+                    p=p.next
+                    q=q.next
+            p.next=p.next.next        
+
+              
+                    
+a1=Link_list()
+l1=[1,2]
+for i in l1:
+    a1.Add_Node(i)
+a1.display()
+print("######")
+a1.Remove_nth_Node(1)
+a1.display()
+
+
+                
+            
+
