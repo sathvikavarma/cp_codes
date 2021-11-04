@@ -1,0 +1,28 @@
+def leftRotate(arr,n,d):
+    for i in range(d):
+        leftRotatebyOne(arr,n)
+         
+         
+def leftRotatebyOne(arr,n):
+    temp=arr[0]
+    for i in range(n-1):
+        arr[i]=arr[i+1]
+    arr[n-1]=temp
+     
+def printarr(arr,n):     
+    for  i in range(n):
+        print(arr[i],end=",")
+        
+arr=[]
+n=int(input())
+d=int(input())
+for i in range(n):
+    ele=int(input())
+    arr.append(ele)
+    
+leftRotate(arr,n,d)
+printarr(arr,n)
+     
+    
+    
+            
